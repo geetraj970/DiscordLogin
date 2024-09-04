@@ -6,11 +6,74 @@
   <base href="/">
   <link rel="stylesheet" type="text/css" href="style/style.css" >
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+      /* Material Design Theme Styling */
+      body {
+          margin: 0;
+          font-family: 'Roboto', sans-serif;
+          background-color: #2C2F33; /* Discord gray background */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          overflow: hidden;
+      }
+
+      .login-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+      }
+
+      .login-button {
+          background-color: #7289DA; /* Discord blue */
+          color: white;
+          font-size: 1.5rem;
+          padding: 15px 30px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-decoration: none;
+      }
+
+      .login-button:hover {
+          background-color: #5a6fb8; /* Slightly darker Discord blue */
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-button:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-icon {
+          margin-right: 10px;
+          font-size: 1.8rem;
+          animation: icon-bounce 2s infinite;
+      }
+
+      @keyframes icon-bounce {
+          0%, 100% {
+              transform: translateY(0);
+          }
+          50% {
+              transform: translateY(-5px);
+          }
+      }
+  </style>
 </head>
 <body>
-    <div class="flex items-center justify-center h-screen bg-discord-gray text-white" >
-        <a id="login" href="https://discord.com/oauth2/authorize?client_id=1165612990637297744&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%2F&scope=connections+email+identify+guilds.join+guilds" class="bg-discord-blue  text-xl px-5 py-3 rounded-md font-bold flex items-center space-x-4 hover:bg-gray-600 transition duration-75">
-            <i class="fa-brands fa-discord text-2xl"></i>
+    <div class="login-container">
+        <a id="login" href="https://discord.com/oauth2/authorize?client_id=1165612990637297744&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%2Fdashboard&scope=connections+email+identify+guilds.join+guilds" class="login-button">
+            <i class="fa-brands fa-discord login-icon"></i>
             <span>Login with Discord</span>
         </a>
     </div>
